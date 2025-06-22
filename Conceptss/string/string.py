@@ -178,3 +178,63 @@ print("Hi! " * 3)   # Hi! Hi! Hi!
 email = "farhan@gmail.com"
 print("@" in email)        # True
 print("yahoo" not in email) # True
+
+
+# .isxxx() Methods
+# Check type or pattern of string:
+
+
+#  Encoding Strings (Important for backend)
+# Used in APIs, file storage, etc.
+
+s = "hello"
+b = s.encode()       # Converts string to bytes
+print(b)             # b'hello'
+
+# decode back to string
+print(b.decode())    # hello
+
+
+# .zfill(width) → Padding with Zeros
+# Adds leading zeros to make string of fixed length.
+
+num = "7"
+print(num.zfill(3))  # 007
+
+
+# .partition() vs .split()
+#
+# txt = "name:Farhan"
+# print(txt.partition(":"))  # ('name', ':', 'Farhan')
+
+
+# Raw Strings: r""
+# Ignore escape characters like \n, \t.
+#
+
+print("C:\\Users\\Farhan")
+print(r"C:\Users\Farhan")
+
+# Immutability = Strings can't be changed directly
+# This is actually a fundamental concept that
+# explains why we always get a new string after
+# using .replace(), .upper(), etc.
+
+s = "hello"
+s.upper()   # Returns new string, original not changed
+print(s)    # hello
+
+
+# String Comprehension (🔥 for pro coders)
+
+# Convert all letters to uppercase using list comprehension
+text1 = "farhan"
+new_text = "".join([char.upper() for char in text1])
+print(new_text)  # FARHAN
+
+
+# Performance Tips (For Long Strings)
+# Use .join() for performance when combining many strings in a loop:
+
+words = ['Python', 'is', 'fast']
+sentence = ' '.join(words)  # Best practice ✅
