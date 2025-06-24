@@ -248,3 +248,182 @@ age = 17
 msg = "Adult" if age >= 18 else "Teen"
 print(msg)
 
+# ----------------------------------------
+# 🧊 SET METHODS
+# ----------------------------------------
+
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a.union(b))       # {1, 2, 3, 4, 5}
+print(a.intersection(b))  # {3}
+print(a.difference(b))  # {1, 2}
+
+# ----------------------------------------
+# 🔑 DICTIONARY METHODS
+# ----------------------------------------
+
+person = {"name": "Farhan", "age": 23}
+
+print(person.keys())    # dict_keys(['name', 'age'])
+print(person.values())  # dict_values(['Farhan', 23])
+print(person.items())   # dict_items([('name', 'Farhan'), ('age', 23)])
+
+# Loop through dictionary
+for key, value in person.items():
+    print(key, value)
+
+# ----------------------------------------
+# 🧩 TYPE CASTING
+# ----------------------------------------
+
+x = "123"
+x_int = int(x)
+
+y = 100
+y_str = str(y)
+
+list_from_tuple = list((1, 2, 3))
+
+# ----------------------------------------
+# 🧪 ASSERTIONS
+# Used for debugging
+assert 2 + 2 == 4
+# assert 2 + 2 == 5  # This will raise AssertionError
+
+# ----------------------------------------
+# 🔄 RECURSION
+# Function calling itself
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))  # 120
+
+# ----------------------------------------
+# 🧠 GLOBAL vs LOCAL VARIABLES
+# ----------------------------------------
+
+x = 10  # global
+
+def my_func():
+    global x
+    x = 5
+    print("Inside:", x)
+
+my_func()
+print("Outside:", x)
+
+# ----------------------------------------
+# 📂 FILE MODES
+# 'r' – read only
+# 'w' – write (overwrite)
+# 'a' – append
+# 'r+' – read + write
+
+# ----------------------------------------
+# 📚 DOCSTRINGS
+def add(a, b):
+    """This function adds two numbers."""
+    return a + b
+
+print(add.__doc__)
+
+# ----------------------------------------
+# 🧪 EXCEPTIONS – MULTIPLE
+try:
+    num = int("abc")
+    result = 10 / 0
+except ValueError:
+    print("Conversion error")
+except ZeroDivisionError:
+    print("Zero error")
+
+# ----------------------------------------
+# 📦 __name__ == "__main__"
+def say_hi():
+    print("Hi from main!")
+
+if __name__ == "__main__":
+    say_hi()
+
+# ----------------------------------------
+# 🧪 GENERATORS (yield)
+def count_up(limit):
+    i = 1
+    while i <= limit:
+        yield i
+        i += 1
+
+for num in count_up(5):
+    print(num)
+
+# ----------------------------------------
+# 🔄 ITERATORS
+nums = [1, 2, 3]
+it = iter(nums)
+print(next(it))
+print(next(it))
+
+# ----------------------------------------
+# 🧱 INHERITANCE (OOP)
+class Animal:
+    def speak(self):
+        print("Animal Sound")
+
+class Dog(Animal):
+    def speak(self):
+        print("Bark!")
+
+d = Dog()
+d.speak()
+
+# ----------------------------------------
+# 🧠 PROPERTY DECORATOR
+class Product:
+    def __init__(self, price):
+        self._price = price
+
+    @property
+    def price(self):
+        return self._price
+
+p = Product(100)
+print(p.price)
+
+# ----------------------------------------
+# 💡 DECORATORS
+def my_decorator(func):
+    def wrapper():
+        print("Before function")
+        func()
+        print("After function")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()
+
+# ----------------------------------------
+# 🔄 COMPREHENSIONS
+# Set
+nums = [1, 2, 2, 3]
+unique = {x for x in nums}
+
+# Dictionary
+squares = {x: x*x for x in range(1, 4)}
+
+# ----------------------------------------
+# 🛠 UTILITY: pass, del, is, in
+pass  # placeholder
+
+del x  # delete variable
+
+# 'is' and 'in'
+a = [1, 2]
+b = a
+print(a is b)       # True
+print(2 in a)       # True
