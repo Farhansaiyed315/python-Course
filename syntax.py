@@ -427,3 +427,167 @@ a = [1, 2]
 b = a
 print(a is b)       # True
 print(2 in a)       # True
+
+
+#  Python Syntax Part 3: Pro-Level Essentials
+
+# ----------------------------------------
+# 🧩 PACKAGES & MODULES
+# ----------------------------------------
+
+# mymodule.py
+def welcome():
+    print("Welcome to my module!")
+
+# main.py
+import mymodule
+mymodule.welcome()
+
+# Or import specific
+from mymodule import welcome
+welcome()
+
+# ----------------------------------------
+# 🧰 JSON (for APIs & data exchange)
+import json
+
+# Python to JSON
+data = {"name": "Farhan", "age": 23}
+json_str = json.dumps(data)
+print(json_str)
+
+# JSON to Python
+parsed_data = json.loads(json_str)
+print(parsed_data["name"])
+
+# ----------------------------------------
+# 📁 OS MODULE
+import os
+
+print(os.getcwd())           # current directory
+os.mkdir("new_folder")       # make folder
+os.rename("old.txt", "new.txt")  # rename file
+os.remove("new.txt")         # delete file
+os.rmdir("new_folder")       # remove folder
+
+# ----------------------------------------
+# 🕰 TIME & DATETIME
+import time
+import datetime
+
+time.sleep(2)  # pause for 2 seconds
+
+now = datetime.datetime.now()
+print(now.strftime("%Y-%m-%d %H:%M:%S"))
+
+# ----------------------------------------
+# 📦 VIRTUAL ENVIRONMENT (CLI usage)
+# These are shell commands (not Python code)
+# python -m venv env
+# env\Scripts\activate (Windows)
+# source env/bin/activate (Linux/Mac)
+
+# ----------------------------------------
+# 📦 INSTALLING PACKAGES
+# pip install package_name
+# Example: pip install requests
+
+# ----------------------------------------
+# 🌐 HTTP REQUESTS (with requests module)
+import requests
+
+response = requests.get("https://api.github.com")
+print(response.status_code)
+print(response.json())
+
+# ----------------------------------------
+# 📌 ADVANCED CLASS (Inheritance + super)
+class Vehicle:
+    def __init__(self, brand):
+        self.brand = brand
+
+    def drive(self):
+        print(f"{self.brand} is driving")
+
+class Car(Vehicle):
+    def __init__(self, brand, model):
+        super().__init__(brand)
+        self.model = model
+
+    def drive(self):
+        print(f"{self.brand} {self.model} is driving")
+
+mycar = Car("Toyota", "Fortuner")
+mycar.drive()
+
+# ----------------------------------------
+# 🧠 CLASS METHODS & STATIC METHODS
+class User:
+    users = 0
+
+    def __init__(self):
+        User.users += 1
+
+    @classmethod
+    def get_users(cls):
+        return cls.users
+
+    @staticmethod
+    def greet():
+        print("Welcome, user!")
+
+print(User.get_users())
+User.greet()
+
+# ----------------------------------------
+# 📥 EXTERNAL INPUT (CMD arguments)
+import sys
+
+print("Script name:", sys.argv[0])
+if len(sys.argv) > 1:
+    print("Arg:", sys.argv[1])
+
+# ----------------------------------------
+# 🎛 ENUM (useful for fixed choices)
+from enum import Enum
+
+class Status(Enum):
+    SUCCESS = 1
+    FAILURE = 0
+
+print(Status.SUCCESS)
+print(Status.SUCCESS.name)
+print(Status.SUCCESS.value)
+
+# ----------------------------------------
+# 🔄 CONTEXT MANAGER (custom with `with`)
+class MyContext:
+    def __enter__(self):
+        print("Enter block")
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print("Exit block")
+
+with MyContext():
+    print("Inside context")
+
+# ----------------------------------------
+# 🔥 EXCEPTION CHAINING
+try:
+    try:
+        raise ValueError("Inner error")
+    except ValueError as e:
+        raise RuntimeError("Outer error") from e
+except RuntimeError as err:
+    print(err.__cause__)
+
+# ----------------------------------------
+# 🧪 TESTING WITH ASSERT (simple test)
+def double(x):
+    return x * 2
+
+assert double(2) == 4
+assert double(5) == 10
+# assert double(3) == 7  # This will fail!
+
