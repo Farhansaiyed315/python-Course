@@ -1,4 +1,3 @@
-
 # ----------------------------------------
 # 🧠 BASIC PYTHON SYNTAX
 # ----------------------------------------
@@ -78,6 +77,7 @@ for i in range(5):
         break
     print(i)
 
+
 # ----------------------------------------
 # 🔧 FUNCTIONS
 # ----------------------------------------
@@ -85,32 +85,40 @@ for i in range(5):
 def greet(name):
     return "Hello " + name
 
+
 print(greet("Farhan"))
+
 
 # Default Arguments
 def welcome(name="Bro"):
     print("Welcome", name)
 
+
 welcome()
 welcome("Farhan")
+
 
 # Return multiple values
 def calc(a, b):
     return a + b, a * b
 
+
 sum_result, product = calc(2, 3)
 print(sum_result, product)
+
 
 # Args and Kwargs
 def show(*args, **kwargs):
     print(args)
     print(kwargs)
 
+
 show(1, 2, name="Farhan", age=23)
 
 # Lambda function
 add = lambda x, y: x + y
 print(add(5, 3))
+
 
 # ----------------------------------------
 # 🧱 CLASSES & OBJECTS
@@ -124,6 +132,7 @@ class Person:
     def intro(self):
         print("Hi, I'm", self.name)
 
+
 p1 = Person("Farhan", 23)
 p1.intro()
 
@@ -131,7 +140,7 @@ p1.intro()
 # 🎲 LIST COMPREHENSION
 # ----------------------------------------
 
-squares = [x*x for x in range(1, 6)]
+squares = [x * x for x in range(1, 6)]
 print(squares)
 
 # ----------------------------------------
@@ -171,6 +180,7 @@ print(even)
 
 # reduce
 from functools import reduce
+
 total = reduce(lambda a, b: a + b, nums)
 print(total)
 
@@ -217,21 +227,26 @@ else:
 finally:
     print("Always runs")
 
+
 # Raise custom error
 def divide(x, y):
     if y == 0:
         raise ValueError("Cannot divide by 0!")
     return x / y
 
+
 # ----------------------------------------
 # 📦 MODULE IMPORT
 # ----------------------------------------
 
 import math
+
 print(math.sqrt(25))
 
 from math import pi, sqrt
+
 print(pi, sqrt(16))
+
 
 # ----------------------------------------
 # 🧩 TYPE HINTING
@@ -239,6 +254,7 @@ print(pi, sqrt(16))
 
 def add_nums(a: int, b: int) -> int:
     return a + b
+
 
 # ----------------------------------------
 # 🚦 TERNARY OPERATOR
@@ -255,7 +271,7 @@ print(msg)
 a = {1, 2, 3}
 b = {3, 4, 5}
 
-print(a.union(b))       # {1, 2, 3, 4, 5}
+print(a.union(b))  # {1, 2, 3, 4, 5}
 print(a.intersection(b))  # {3}
 print(a.difference(b))  # {1, 2}
 
@@ -265,9 +281,9 @@ print(a.difference(b))  # {1, 2}
 
 person = {"name": "Farhan", "age": 23}
 
-print(person.keys())    # dict_keys(['name', 'age'])
+print(person.keys())  # dict_keys(['name', 'age'])
 print(person.values())  # dict_values(['Farhan', 23])
-print(person.items())   # dict_items([('name', 'Farhan'), ('age', 23)])
+print(person.items())  # dict_items([('name', 'Farhan'), ('age', 23)])
 
 # Loop through dictionary
 for key, value in person.items():
@@ -289,6 +305,8 @@ list_from_tuple = list((1, 2, 3))
 # 🧪 ASSERTIONS
 # Used for debugging
 assert 2 + 2 == 4
+
+
 # assert 2 + 2 == 5  # This will raise AssertionError
 
 # ----------------------------------------
@@ -299,6 +317,7 @@ def factorial(n):
         return 1
     return n * factorial(n - 1)
 
+
 print(factorial(5))  # 120
 
 # ----------------------------------------
@@ -307,13 +326,16 @@ print(factorial(5))  # 120
 
 x = 10  # global
 
+
 def my_func():
     global x
     x = 5
     print("Inside:", x)
 
+
 my_func()
 print("Outside:", x)
+
 
 # ----------------------------------------
 # 📂 FILE MODES
@@ -328,6 +350,7 @@ def add(a, b):
     """This function adds two numbers."""
     return a + b
 
+
 print(add.__doc__)
 
 # ----------------------------------------
@@ -340,13 +363,16 @@ except ValueError:
 except ZeroDivisionError:
     print("Zero error")
 
+
 # ----------------------------------------
 # 📦 __name__ == "__main__"
 def say_hi():
     print("Hi from main!")
 
+
 if __name__ == "__main__":
     say_hi()
+
 
 # ----------------------------------------
 # 🧪 GENERATORS (yield)
@@ -355,6 +381,7 @@ def count_up(limit):
     while i <= limit:
         yield i
         i += 1
+
 
 for num in count_up(5):
     print(num)
@@ -366,18 +393,22 @@ it = iter(nums)
 print(next(it))
 print(next(it))
 
+
 # ----------------------------------------
 # 🧱 INHERITANCE (OOP)
 class Animal:
     def speak(self):
         print("Animal Sound")
 
+
 class Dog(Animal):
     def speak(self):
         print("Bark!")
 
+
 d = Dog()
 d.speak()
+
 
 # ----------------------------------------
 # 🧠 PROPERTY DECORATOR
@@ -389,8 +420,10 @@ class Product:
     def price(self):
         return self._price
 
+
 p = Product(100)
 print(p.price)
+
 
 # ----------------------------------------
 # 💡 DECORATORS
@@ -399,11 +432,14 @@ def my_decorator(func):
         print("Before function")
         func()
         print("After function")
+
     return wrapper
+
 
 @my_decorator
 def say_hello():
     print("Hello!")
+
 
 say_hello()
 
@@ -414,7 +450,7 @@ nums = [1, 2, 2, 3]
 unique = {x for x in nums}
 
 # Dictionary
-squares = {x: x*x for x in range(1, 4)}
+squares = {x: x * x for x in range(1, 4)}
 
 # ----------------------------------------
 # 🛠 UTILITY: pass, del, is, in
@@ -425,8 +461,8 @@ del x  # delete variable
 # 'is' and 'in'
 a = [1, 2]
 b = a
-print(a is b)       # True
-print(2 in a)       # True
+print(a is b)  # True
+print(2 in a)  # True
 
 
 #  Python Syntax Part 3: Pro-Level Essentials
@@ -439,36 +475,40 @@ print(2 in a)       # True
 def welcome():
     print("Welcome to my module!")
 
-# main.py
-import mymodule
-mymodule.welcome()
+    # please note main.py se check karna hai pata nahi kyun errors aa raha hai
 
-# Or import specific
-from mymodule import welcome
-welcome()
 
-# ----------------------------------------
-# 🧰 JSON (for APIs & data exchange)
-import json
-
-# Python to JSON
-data = {"name": "Farhan", "age": 23}
-json_str = json.dumps(data)
-print(json_str)
-
-# JSON to Python
-parsed_data = json.loads(json_str)
-print(parsed_data["name"])
+#
+# # main.py
+# import mymodule
+# mymodule.welcome()
+#
+# # Or import specific
+# from mymodule import welcome
+# welcome()
+#
+# # ----------------------------------------
+# # 🧰 JSON (for APIs & data exchange)
+# import json
+#
+# # Python to JSON
+# data = {"name": "Farhan", "age": 23}
+# json_str = json.dumps(data)
+# print(json_str)
+#
+# # JSON to Python
+# parsed_data = json.loads(json_str)
+# print(parsed_data["name"])
 
 # ----------------------------------------
 # 📁 OS MODULE
 import os
 
-print(os.getcwd())           # current directory
-os.mkdir("new_folder")       # make folder
+print(os.getcwd())  # current directory
+os.mkdir("new_folder")  # make folder
 os.rename("old.txt", "new.txt")  # rename file
-os.remove("new.txt")         # delete file
-os.rmdir("new_folder")       # remove folder
+os.remove("new.txt")  # delete file
+os.rmdir("new_folder")  # remove folder
 
 # ----------------------------------------
 # 🕰 TIME & DATETIME
@@ -500,6 +540,7 @@ response = requests.get("https://api.github.com")
 print(response.status_code)
 print(response.json())
 
+
 # ----------------------------------------
 # 📌 ADVANCED CLASS (Inheritance + super)
 class Vehicle:
@@ -509,6 +550,7 @@ class Vehicle:
     def drive(self):
         print(f"{self.brand} is driving")
 
+
 class Car(Vehicle):
     def __init__(self, brand, model):
         super().__init__(brand)
@@ -517,8 +559,10 @@ class Car(Vehicle):
     def drive(self):
         print(f"{self.brand} {self.model} is driving")
 
+
 mycar = Car("Toyota", "Fortuner")
 mycar.drive()
+
 
 # ----------------------------------------
 # 🧠 CLASS METHODS & STATIC METHODS
@@ -536,6 +580,7 @@ class User:
     def greet():
         print("Welcome, user!")
 
+
 print(User.get_users())
 User.greet()
 
@@ -551,13 +596,16 @@ if len(sys.argv) > 1:
 # 🎛 ENUM (useful for fixed choices)
 from enum import Enum
 
+
 class Status(Enum):
     SUCCESS = 1
     FAILURE = 0
 
+
 print(Status.SUCCESS)
 print(Status.SUCCESS.name)
 print(Status.SUCCESS.value)
+
 
 # ----------------------------------------
 # 🔄 CONTEXT MANAGER (custom with `with`)
@@ -568,6 +616,7 @@ class MyContext:
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         print("Exit block")
+
 
 with MyContext():
     print("Inside context")
@@ -582,12 +631,13 @@ try:
 except RuntimeError as err:
     print(err.__cause__)
 
+
 # ----------------------------------------
 # 🧪 TESTING WITH ASSERT (simple test)
 def double(x):
     return x * 2
 
+
 assert double(2) == 4
 assert double(5) == 10
 # assert double(3) == 7  # This will fail!
-
