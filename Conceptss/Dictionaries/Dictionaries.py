@@ -72,12 +72,64 @@ for key, value in student.items():
 
 
 
+student = {"name": "Farhan", "age": 25}
+print(student.get("name"))      # Output: Farhan
+print(student.get("city", "N/A"))  # Output: N/A (default value)
+
+
+print(student.keys())  # Output: dict_keys(['name', 'age'])
 
 
 
 
+print(student.values())  # Output: dict_values(['Farhan', 25])
 
 
+
+print(student.items())
+# Output: dict_items([('name', 'Farhan'), ('age', 25)])
+
+
+student.update({"city": "Mumbai"})
+print(student)
+# Output: {'name': 'Farhan', 'age': 25, 'city': 'Mumbai'}
+
+
+age = student.pop("age")
+print(age)       # Output: 25
+print(student)   # Output: {'name': 'Farhan', 'city': 'Mumbai'}
+
+
+student.popitem()
+print(student)
+# Output: {'name': 'Farhan'} (city removed)
+
+student.clear()
+print(student)  # Output: {}
+
+# Returns a shallow copy of the dictionary.
+new_student = student.copy()
+
+
+keys = ["a", "b", "c"]
+new_dict = dict.fromkeys(keys, 0)
+print(new_dict)
+# Output: {'a': 0, 'b': 0, 'c': 0}
+
+
+
+# | Method       | Use Case Example                      |
+# | ------------ | ------------------------------------- |
+# | `.get()`     | Get value safely                      |
+# | `.keys()`    | Get all keys                          |
+# | `.values()`  | Get all values                        |
+# | `.items()`   | Get all key-value pairs               |
+# | `.update()`  | Add or update keys                    |
+# | `.pop()`     | Remove key and return its value       |
+# | `.popitem()` | Remove last item                      |
+# | `.clear()`   | Delete everything                     |
+# | `.copy()`    | Copy the dictionary                   |
+# | `fromkeys()` | Make new dict with given keys + value |
 
 
 
