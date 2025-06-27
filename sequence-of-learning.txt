@@ -1,0 +1,130 @@
+
+# 🐍 Python Learning Roadmap - Beginner to Advanced
+
+---
+
+## ✅ Beginner Level (Basics)
+
+1. **Introduction to Python**
+   - What is Python?
+   - Features and uses
+   - Installing Python & VS Code / PyCharm
+
+2. **Basic Syntax**
+   - Print statements
+   - Comments (`#` single-line, `''' '''` multi-line)
+
+3. **Variables and Data Types**
+   - int, float, str, bool
+   - Type casting (str(), int(), float())
+
+4. **Input & Output**
+   - input(), print()
+   - f-strings (formatted strings)
+
+5. **Operators**
+   - Arithmetic: + - * / // %
+   - Comparison: == != > < >= <=
+   - Logical: and, or, not
+   - Assignment: =, +=, -= etc.
+
+6. **Conditional Statements**
+   - if, elif, else
+   - Nested if statements
+
+7. **Loops**
+   - for loop, while loop
+   - break, continue, pass
+
+8. **Basic Data Structures**
+   - Strings (indexing, slicing, methods)
+   - Lists (CRUD, list methods)
+   - Tuples (immutable sequences)
+   - Dictionaries (key-value pairs)
+   - Sets (unique elements)
+
+---
+
+## 🔁 Intermediate Level (Logic + Functions)
+
+9. **Functions**
+   - def, parameters, return
+   - Default & keyword arguments
+   - *args and **kwargs
+   - Lambda functions
+   - Recursion
+
+10. **Built-in Functions & Modules**
+    - len(), range(), type(), enumerate()
+    - math, random, datetime, os modules
+
+11. **Exception Handling**
+    - try, except, else, finally
+    - Custom error messages
+
+12. **File Handling**
+    - Open, read, write, append
+    - with open() context manager
+
+13. **Comprehensions**
+    - List comprehension
+    - Dictionary & set comprehension
+
+14. **Working with External Libraries**
+    - pip install
+    - Example: requests, pandas, matplotlib (basic)
+
+---
+
+## 🚀 Advanced Level
+
+15. **Object-Oriented Programming (OOP)**
+    - Classes and Objects
+    - __init__(), self
+    - Instance and class variables
+    - Inheritance & Polymorphism
+    - Encapsulation and Abstraction
+
+16. **Advanced Data Structures**
+    - Stack and Queue (using lists)
+    - Linked list basics
+    - JSON handling
+
+17. **Iterators & Generators**
+    - iter(), next()
+    - yield and generator functions
+
+18. **Decorators**
+    - Function decorators
+    - @staticmethod and @classmethod
+
+19. **Regular Expressions (Regex)**
+    - re module basics
+
+20. **Working with Databases**
+    - sqlite3 or MySQL connectors
+    - Create, Read, Update, Delete (CRUD)
+
+---
+
+## 🧠 Practice + Mini Projects
+
+21. **Problem Solving**
+    - Start with easy problems
+    - Use HackerRank, LeetCode, Codewars, etc.
+
+22. **Mini Projects Ideas**
+    - Calculator
+    - To-Do List
+    - Weather App (using API)
+    - File Organizer
+    - Simple Chatbot
+
+---
+## 🔥 Optional (Advanced Topics)
+- Web Dev → Flask or Django
+- Data Analysis → NumPy, Pandas
+- Machine Learning → Scikit-learn, Matplotlib
+
+📝 Tip: Practice daily, build small projects,
+ and apply your knowledge step-by-step.
