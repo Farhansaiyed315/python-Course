@@ -69,10 +69,36 @@ unique_nums = set(nums)
 print(unique_nums)  # Output: {1, 2, 3, 4, 5}
 
 
+# | Method             | Description                                  | Example            |
+# | ------------------ | -------------------------------------------- | ------------------ |
+# | `add(item)`        | Adds a single item to the set                | `s.add(10)`        |
+# | `update(iterable)` | Adds multiple items from a list, tuple, etc. | `s.update([4, 5])` |
+# | `remove(item)`     | Removes the item; throws error if not found  | `s.remove(3)`      |
+# | `discard(item)`    | Removes the item; no error if not found      | `s.discard(5)`     |
+# | `pop()`            | Removes and returns a random item            | `s.pop()`          |
+# | `clear()`          | Removes all items from the set               | `s.clear()`        |
+# | `copy()`           | Returns a shallow copy of the set            | `s2 = s.copy()`    |
 
 
 
+# Set Operations (Using Methods)
 
+# | Method                       | Description                                   | Example                       |
+# | ---------------------------- | --------------------------------------------- | ----------------------------- |
+# | `union(set2)`                | Returns a new set with all elements from both | `s1.union(s2)`                |
+# | `intersection(set2)`         | Returns common elements                       | `s1.intersection(s2)`         |
+# | `difference(set2)`           | Elements in `s1` not in `s2`                  | `s1.difference(s2)`           |
+# | `symmetric_difference(set2)` | Elements not common in both sets              | `s1.symmetric_difference(s2)` |
+
+
+
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a.union(b))  # {1, 2, 3, 4, 5}
+print(a.intersection(b))  # {3}
+print(a.difference(b))  # {1, 2}
+print(a.symmetric_difference(b))  # {1, 2, 4, 5}
 
 
 
