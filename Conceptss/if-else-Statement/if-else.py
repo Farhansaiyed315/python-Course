@@ -49,3 +49,51 @@ elif temp > 20 and temp <= 35:
     print("Nice weather 😎")
 else:
     print("It's cold 🥶")
+
+
+# Python Short-hand if-else (Ternary Operator)
+# In Python, you can write an if-else statement in a
+# single line using a short-hand format called the ternary
+# operator.
+
+# value_if_true if condition else value_if_false
+
+
+age = 20
+result = "Adult" if age >= 18 else "Minor"
+print(result)
+
+a = 10
+b = 20
+larger = a if a > b else b
+print(larger)
+
+
+x = 5
+print("Even") if x % 2 == 0 else print("Odd")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

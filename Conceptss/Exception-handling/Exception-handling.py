@@ -83,7 +83,39 @@ finally:
     print("Closing program.")
 
 
+#   How to raise custom errors in python.
 
+# Step 1: Create custom error
+class MyCustomError(Exception):
+    pass
+
+# Step 2: Use it
+x = 10
+
+if x > 5:
+    raise MyCustomError("x is too large!")
+
+
+#  Custom Error with __init__:
+
+class ValidationError(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(self.message)
+
+# Using it
+username = ""
+
+if not username:
+    raise ValidationError("Username cannot be empty.")
+
+
+# You can also catch your custom error:
+
+try:
+    raise ValidationError("Something went wrong")
+except ValidationError as e:
+    print(f"Caught an error: {e}")
 
 
 
