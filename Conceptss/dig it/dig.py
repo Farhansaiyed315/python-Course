@@ -43,9 +43,44 @@ if __name__ == "__main__":
 # file is imported into another file
 
 
+# 'is' vs '==' in Python------------------------------------------------
 
 
 
+#  == (Double Equal Sign)
+# Checks if values are equal
+#
+# It compares contents of two variables
+
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+print(a == b)  # ✅ True (because both lists have the same values)
+
+
+# is (Identity Operator)
+# Checks if two variables point to the exact same object in memory
+#
+# It compares the memory address (identity), not the conten
+
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+print(a is b)  # ❌ False (because they are two different list objects)
+
+
+# Small Tip: With is, use when you care about identity, like checking if something is None.
+
+x = None
+
+if x is None:   # ✅ This is the right way
+    print("x is None")
+
+
+# | Operator | Checks for             | Example Use             |
+# | -------- | ---------------------- | ----------------------- |
+# | `==`     | Same **value/content** | `a == b`                |
+# | `is`     | Same **object/memory** | `a is b` or `x is None` |
 
 
 
